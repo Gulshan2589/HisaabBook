@@ -1,0 +1,62 @@
+.transactions-count{
+    box-shadow: 0 0 2px rgb(113, 112, 112);
+    padding: 15px;
+    border-radius: 10px;
+    color: rgb(56, 55, 55) !important;
+}
+
+.analytics h4{
+    font-size: 20px;
+    color: var( --color-lightseagreen);
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.analytics h5{
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--color-brightblue);
+}
+
+.progress-bars {
+    margin: 10px 10px;
+}
+
+.progress-element{
+    margin-right:25px;
+}
+
+.category-card{
+    padding: 5px 20px;
+    box-shadow: 0 0 2px gray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.totaltran-col{
+    display: flex;
+    flex-direction: row;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.totalturn-col{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+
+.category-col {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   margin-top: 10px;
+}

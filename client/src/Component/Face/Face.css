@@ -1,0 +1,19 @@
+.face{
+    margin: 2rem 10rem;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 2rem;
+}
+
+.form img {
+    padding-bottom: 10px;
+    width: 350px;
+    height: 250px;
+}

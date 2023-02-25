@@ -1,0 +1,67 @@
+.register {
+  height: 100vh;
+  display: flex;
+  background: var(--color-lightseagreen);
+}
+
+.form {
+  margin: 3rem 4rem;
+}
+
+.spinner {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  color: rebeccapurple;
+  padding: 16rem 38rem;
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 4px;
+}
+
+.register input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.784);
+  color: rgba(255, 255, 255, 0.568);
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.784) !important;
+}
+
+.label-auth label{
+  color: var(--color-golden)!important;
+}
+
+#reglink {
+  color: rgba(255, 255, 255, 0.536) !important;
+}
+
+.register h1 {
+  font-size: 35px;
+  color: white;
+  font-weight: 600;
+}
+
+.primary {
+  font-size: 1rem;
+  margin-left: 10px;
+  padding: 9px 9px;
+  background-color: var(--color-brightblue);
+  color: var(--color-white);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .register {
+    background: var(--color-lightseagreen);
+  }
+
+  .lottie {
+    display: none;
+  }
+}

@@ -1,0 +1,115 @@
+
+.dashboard_container {
+    margin: 1rem 1rem;
+    border: 1.5px solid lightseagreen;
+    border-radius: 4px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.filter {
+    margin: 15px 10px;
+    border: 1.5px solid lightseagreen;
+    border-radius: 4px;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.d-flex1{
+    display: flex;
+    padding: 10px 10px;
+}
+
+h6 {
+    color: var(--color-skyblue);
+    font-size: 15px;
+    font-family: var(--font-alt);
+    padding-bottom: 6px;
+}
+
+
+.frequency{
+    display: flex;
+    flex-direction: column;
+}
+
+.type {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.mt-2{
+    margin-top: 8px;
+}
+
+.d-flex2 { 
+    display: flex;
+}
+
+.analysis {
+    margin: 15px 15px;
+    padding: 2px 2px;
+    border: 2px solid lightseagreen;
+    border-radius: 3px;
+}
+
+.icons {
+    font-size: 1.8rem;
+    padding-right: 6px;
+    cursor: pointer;
+}
+
+.active-icon{
+    color: black; 
+}
+
+.inactive-icon{
+    color: gray;
+}
+
+.icons.active {
+    color: aquamarine;
+}
+
+.f-button {
+   margin: 15px 15px;
+}
+
+.primary {
+    font-size: 1rem;
+    padding: 9px 9px;
+    background-color: var(--color-brightblue);
+    color: var(--color-white);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.table-analtics {
+    margin: 10px 10px;
+}
+
+.a-icons1 {
+    font-size: 1.3rem;
+}
+
+.a-icons2 {
+    font-size: 1.3rem;
+    padding-left: 16px;
+}
+
+
+
+@media screen and (max-width: 650px) {
+    .dashboard_container{
+        overflow-x: scroll;
+        margin: 6px;
+    }
+  .table-analtics{
+    width: 100%;
+    margin: 7px;
+  }
+}
