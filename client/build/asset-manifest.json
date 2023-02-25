@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6edc6130.css",
+    "main.js": "/static/js/main.d1eafb8a.js",
+    "static/media/HisaabBook.png": "/static/media/HisaabBook.ca7d2fc0e70e0957fbbc.png",
+    "index.html": "/index.html",
+    "main.6edc6130.css.map": "/static/css/main.6edc6130.css.map",
+    "main.d1eafb8a.js.map": "/static/js/main.d1eafb8a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6edc6130.css",
+    "static/js/main.d1eafb8a.js"
+  ]
+}
