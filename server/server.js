@@ -17,7 +17,7 @@ app.use('/api/users/', userRoute);
 app.use('/api/transaction/', transactionRoute);
 
 // Set the port to listen for incoming requests
-const port = process.env.PORT || 4000;
+const port = 4000;
 
 
 // Define a simple route to test the server
