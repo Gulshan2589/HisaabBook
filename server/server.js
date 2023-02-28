@@ -7,7 +7,7 @@ const dbConnect = require('./dbConnect')
 // Create an instance of Express.js
 const app = express()
 
-const path = require('path');
+
 
 // Middleware to parse incoming requests as JSON
 app.use(express.json())
