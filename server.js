@@ -16,17 +16,16 @@ const transactionRoute = require('./routes/transactionRoute');
 app.use('/api/users/', userRoute);
 app.use('/api/transaction/', transactionRoute);
 
-const path = require('path');
 
 // Set the port to listen for incoming requests
 const port = process.env.PORT ||  4000;
 
 if(process.env.NODE_ENV === 'production')
 {
-     app.use('/' , express.static('../client/build'))
+     app.use('/' , express.static('client/build'))
 
      app.get('*' , (req, res)=>{
-         res.sendFile(path.resolve(__dirname, '../client/build/index.html'))
+         res.sendFile(path.resolve(__dirname, 'client/build/index.html'))
      })
 }
 
