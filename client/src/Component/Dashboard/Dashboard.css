@@ -3,6 +3,7 @@
     border: 1.5px solid lightseagreen;
     border-radius: 4px;
     height: 100vh;
+    overflow-y: scroll;
 }
 
 .filter {

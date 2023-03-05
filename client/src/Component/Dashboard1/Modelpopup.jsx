@@ -142,7 +142,7 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
                 <CardHeader className={classes.CardHeader} title="HisaabBook"
                     subheader={<Typography className={classes.subheader}>Powerd by Speechly</Typography>} />
                 <CardContent>
-                    {/* <Typography align="center" variant="h5">Total Balance ${balance}</Typography> */}
+                    <Typography align="center" variant="h5">Total Balance ₹{balance}</Typography>
                     <Typography style={{ lineheight: '2em', marginTop: '20px' }}>
                         {/* for additional information */}
                         <InfoCard />
