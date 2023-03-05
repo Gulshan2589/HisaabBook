@@ -5,7 +5,7 @@ import "./analatics.css";
 
 //Analatics function with pros 
 function Analatics({ transactions }) {
-   // Count the total number of transactions
+  // Count the total number of transactions
   const totalTransactions = transactions.length;
 
   // Get all income transactions
@@ -23,7 +23,7 @@ function Analatics({ transactions }) {
     (totalIncomeTransactions.length / totalTransactions) * 100;
   const totalExpenceTransactionsPercentage =
     (totalExpenceTransactions.length / totalTransactions) * 100;
-  
+
   // Calculate the total turnover (sum of all transaction amounts)
   const totalTurnover = transactions.reduce(
     (acc, transaction) => acc + transaction.amount,
@@ -39,7 +39,7 @@ function Analatics({ transactions }) {
     .filter((transaction) => transaction.type === "Expense")
     .reduce((acc, transaction) => acc + transaction.amount, 0);
 
-   // Calculate the percentage of income and expense turnover
+  // Calculate the percentage of income and expense turnover
   const totalIncomeTurnoverPercentage =
     (totalIncomeTurnover / totalTurnover) * 100;
   const totalExpenceTurnoverPercentage =
@@ -47,10 +47,10 @@ function Analatics({ transactions }) {
 
   //create array of categories
   const categories = [
-    "Business", "Investments","Extra income","Deposits", "Lottery",
-    "Gifts","Salary", "Savings","Rental income","Bills","Car",
-    "Clothes","Travel","Food","Shopping", "House","Entertainment",
-    "Phone","Pets","Other",
+    "Business", "Investments", "Extra income", "Deposits", "Lottery",
+    "Gifts", "Salary", "Savings", "Rental income", "Bills", "Car",
+    "Clothes", "Travel", "Food", "Shopping", "House", "Entertainment",
+    "Phone", "Pets", "Other",
   ];
 
   // Rendering the analytics data to the page
@@ -63,10 +63,10 @@ function Analatics({ transactions }) {
             <hr />
             <h5>Income : {totalIncomeTransactions.length}</h5>
             <h5>Expence : {totalExpenceTransactions.length}</h5>
-  {/* Rendering progress bars for income and expense transactions */}
+            {/* Rendering progress bars for income and expense transactions */}
             <div className="progress-bars">
               <Progress
-                className="progress-element"
+                className="progress-element-trans"
                 strokeColor="#5DD64F"
                 type="circle"
                 percent={totalIncomeTransactionsPercentage.toFixed(0)}
@@ -86,7 +86,7 @@ function Analatics({ transactions }) {
             <hr />
             <h5 >Income : {totalIncomeTurnover}</h5>
             <h5>Expence : {totalExpenceTurnover}</h5>
-  {/* Rendering progress bars for income and expense turnover */}
+            {/* Rendering progress bars for income and expense turnover */}
             <div className="progress-bars">
               <Progress
                 className="progress-element"
@@ -105,10 +105,10 @@ function Analatics({ transactions }) {
       </div>
       <hr />
       <div className="row">
-      {/* We start by rendering a parent div with a class of "category-col". */}
+        {/* We start by rendering a parent div with a class of "category-col". */}
         <div className="category-col">
           <div className="category-analysis">
-            <h4 style={{color: '#5dd64f'}}>Income - Category Wise</h4>
+            <h4 style={{ color: '#5dd64f' }}>Income - Category Wise</h4>
             {/* We then map through an array of categories using the 
             `map` function, and for each category: */}
             {categories.map((category) => {
@@ -116,16 +116,16 @@ function Analatics({ transactions }) {
               // "Income" transactions of that category
               const amount = transactions
                 .filter((t) => t.type === "Income" && t.category === category)
-                 // We calculate the total amount of income transactions 
-                 //in that category using the reduce function.
+                // We calculate the total amount of income transactions 
+                //in that category using the reduce function.
                 .reduce((acc, t) => acc + t.amount, 0);
               return (
                 amount > 0 && <div className="category-card">
-                  <h5 style={{color: '#5dd64f'}}>{category}</h5>
+                  <h5 style={{ color: '#5dd64f' }}>{category}</h5>
                   {/* Render a Progress bar with a blue color stroke, and display 
                   the percentage of the total income turnover for that category. */}
-                  <Progress strokeColor='#0B5AD9' 
-                  percent={((amount / totalIncomeTurnover) * 100).toFixed(0)} />
+                  <Progress strokeColor='#0B5AD9'
+                    percent={((amount / totalIncomeTurnover) * 100).toFixed(0)} />
                 </div>
               );
             })}
@@ -134,16 +134,16 @@ function Analatics({ transactions }) {
 
         <div className="category-col">
           <div className="category-analysis">
-            <h4 style={{color: '#e5572f'}}>Expence - Category Wise</h4>
+            <h4 style={{ color: '#e5572f' }}>Expence - Category Wise</h4>
             {categories.map((category) => {
               const amount = transactions
                 .filter((t) => t.type === "Expense" && t.category === category)
                 .reduce((acc, t) => acc + t.amount, 0);
               return (
                 amount > 0 && <div className="category-card">
-                  <h5 style={{color: '#e5572f'}}>{category}</h5>
-                  <Progress strokeColor='#009cea' 
-                  percent={((amount / totalExpenceTurnover) * 100).toFixed(0)} />
+                  <h5 style={{ color: '#e5572f' }}>{category}</h5>
+                  <Progress strokeColor='#009cea'
+                    percent={((amount / totalExpenceTurnover) * 100).toFixed(0)} />
                 </div>
               );
             })}

@@ -28,9 +28,9 @@ const Dashboard1 = () => {
   const getTransactions = async () => {
     try {
       const user = JSON.parse(localStorage.getItem("HisabbookUser"));
-        // Get the current user from local storage
+      // Get the current user from local storage
 
-        setLoading(true);
+      setLoading(true);
       // Make an API request to fetch transaction data from the server, 
       //passing in the user ID, frequency, and other options as parameters
       const respone = await axios.post('/api/transaction/get-all-transactions',
@@ -76,27 +76,34 @@ const Dashboard1 = () => {
     {
       title: "Date",
       dataIndex: "date",
+      width: 90,
       render: (text) => <span>{moment(text).format('DD-MM-YYYY')}</span>
     },
     {
       title: "Amount",
       dataIndex: "amount",
+      width: 90,
     },
     {
       title: "Category",
       dataIndex: "category",
+      width: 90,
     },
     {
       title: "Type",
       dataIndex: "type",
+      width: 90,
     },
     {
       title: "Reference",
       dataIndex: "reference",
+      width: 90,
     },
     {
       title: "Action",
       dataIndex: "action",
+      width: 90,
+      fixed : 'right',
       // A function that returns the HTML for the "Action" 
       //column, which contains edit and delete icons
       render: (text, record) => {
@@ -167,7 +174,8 @@ const Dashboard1 = () => {
       {/* This div displays either the table view or the analytics view depending on the selected view type */}
       <div className="table-analtics">
         {viewType === "table" ? <div className="table">
-          <Table className="table-data" columns={columns} dataSource={transactionsData} />
+          <Table className="table-data" columns={columns} dataSource={transactionsData}
+            pagination={{ pageSize: 6 }} scroll={{ x: 600 }} />
         </div> : <Analatics transactions={transactionsData} />}
       </div>
       {/* If the add/edit transaction modal is visible, render the Modelpopup component. */}

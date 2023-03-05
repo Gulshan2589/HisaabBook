@@ -1,10 +1,8 @@
-
 .dashboard_container {
     margin: 1rem 1rem;
     border: 1.5px solid lightseagreen;
     border-radius: 4px;
     height: 100vh;
-    overflow-y: scroll;
 }
 
 .filter {
@@ -17,7 +15,7 @@
     justify-content: space-between;
 }
 
-.d-flex1{
+.d-flex1 {
     display: flex;
     padding: 10px 10px;
 }
@@ -30,7 +28,7 @@ h6 {
 }
 
 
-.frequency{
+.frequency {
     display: flex;
     flex-direction: column;
 }
@@ -41,11 +39,11 @@ h6 {
     flex-direction: column;
 }
 
-.mt-2{
+.mt-2 {
     margin-top: 8px;
 }
 
-.d-flex2 { 
+.d-flex2 {
     display: flex;
 }
 
@@ -62,11 +60,11 @@ h6 {
     cursor: pointer;
 }
 
-.active-icon{
-    color: black; 
+.active-icon {
+    color: black;
 }
 
-.inactive-icon{
+.inactive-icon {
     color: gray;
 }
 
@@ -75,7 +73,7 @@ h6 {
 }
 
 .f-button {
-   margin: 15px 15px;
+    margin: 15px 15px;
 }
 
 .primary {
@@ -104,12 +102,48 @@ h6 {
 
 
 @media screen and (max-width: 650px) {
-    .dashboard_container{
-        overflow-x: scroll;
+    .dashboard_container {
+        overflow: scroll;
         margin: 6px;
     }
-  .table-analtics{
-    width: 100%;
-    margin: 7px;
-  }
+
+    .d-flex1 {
+        padding: 5px;
+    }
+
+    .type {
+        margin-left: 8px;
+    }
+
+    .analysis {
+        margin-left: 4px;
+        margin-right: 0px;
+    }
+
+    .icons {
+        font-size: 1.8rem;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+
+    .primary {
+        font-size: 15px;
+        padding: 8px 8px;
+        background-color: var(--color-brightblue);
+        color: var(--color-white);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .f-button {
+        margin-top: 25px;
+        margin-bottom: 0px;
+        margin-right: 8px;
+        margin-left: 0px;
+    }
+
+    
+
+   
 }

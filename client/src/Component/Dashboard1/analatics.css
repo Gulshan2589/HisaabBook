@@ -25,6 +25,10 @@
     margin-right:25px;
 }
 
+.progress-element-trans{
+    margin-right: 20px;
+}
+
 .category-card{
     padding: 5px 20px;
     box-shadow: 0 0 2px gray;
@@ -44,7 +48,7 @@
 .totaltran-col{
     display: flex;
     flex-direction: row;
-    margin-right: 25px;
+    margin-right: 18px;
     margin-bottom: 25px;
 }
 
