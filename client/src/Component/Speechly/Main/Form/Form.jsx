@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from 'react';
 import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import useStyles from './styles';
 import { useSpeechContext } from '@speechly/react-client';
-import { v4 as uuidv4 } from 'uuid';
 import { ExpenseTrackerContext } from '../../../../Context/Context';
 import { message } from "antd";
 import axios from "axios";
