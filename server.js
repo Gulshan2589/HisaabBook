@@ -16,6 +16,7 @@ const transactionRoute = require('./routes/transactionRoute');
 app.use('/api/users/', userRoute);
 app.use('/api/transaction/', transactionRoute);
 
+const path = require('path');
 
 // Set the port to listen for incoming requests
 const port = process.env.PORT ||  4000;
