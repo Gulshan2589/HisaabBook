@@ -1,5 +1,5 @@
 //import all files and libraries
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useContext} from 'react';
 import { Table, Select, DatePicker } from "antd";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { AiOutlineBarChart, AiOutlineBars } from "react-icons/ai";
@@ -9,11 +9,13 @@ import { message } from 'antd';
 import Analatics from "./analatics1";
 import { Modelpopup } from '../../Component';
 import '../Dashboard/Dashboard.css';
+import { ExpenseTrackerContext } from '../.././Context/Context';
 import moment from "moment";
 
 //Creating functional component
 const Dashboard1 = () => {
   //Declaring all state variable which is used below
+  const {deleteTransaction, transactions} = useContext(ExpenseTrackerContext);
   const { RangePicker } = DatePicker;
   const [selectedRange, setSelectedRange] = useState([]);
   const [frequency, setFrequency] = useState('7');
@@ -54,6 +56,7 @@ const Dashboard1 = () => {
       setLoading(true);
       //posting data of deleted transaction through axios in database
       await axios.post('/api/transaction/delete-transaction', { transactionId: record._id });
+      {transactions.map((transaction) => (deleteTransaction(transaction.id)))};
       message.success("Transaction Deleted Successfully");
       //getting all transactions after deleteed transactions
       getTransactions();

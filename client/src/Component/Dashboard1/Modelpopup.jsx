@@ -9,6 +9,7 @@ import useStyles from './styles';
 import InfoCard from '../../Component/Dashboard/InfoCard';
 import { Modal, message } from 'antd';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import Spinner from '../Auth/spinner';
 import { ExpenseTrackerContext } from '../../Context/Context';
 import formateDate from '../../Utils/formateDate';
@@ -31,7 +32,7 @@ const initialState = {
 //the Modelpopup function call when click on add new button 
 //and passing the props of dashbord1 component
 const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModal,
-    selectedItemForEdit, setSelectedItemForEdit, getTransactions, }) => {
+    selectedItemForEdit, setSelectedItemForEdit, getTransactions}) => {
     //defining constant using useState, usStyles, useContext hooks
     const classes = useStyles();
     const { segment } = useSpeechContext();
@@ -39,14 +40,14 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
     // Define a constant to determine the categories based on the selected type
     const selectedCategories = formData.type === "Income" ? incomeCategories : expenseCategories;
     const [loading, setLoading] = useState(false);
-    const { addTransaction, balance } = useContext(ExpenseTrackerContext);
+    const { addTransaction , balance} = useContext(ExpenseTrackerContext);
 
     //onFinish function when Create button clicked
     const onFinish = async () => {
         const transaction = { ...formData, amount: Number(formData.amount) };
         //assigning value of localstorage data to user varaible
-        const user = JSON.parse(localStorage.getItem("HisabbookUser"));
         try {
+            const user = JSON.parse(localStorage.getItem("HisabbookUser"));
             setLoading(true);
             //if form is in edit state then if codtion otherwise else
             if (selectedItemForEdit) {
@@ -64,7 +65,7 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
                 await axios.post('/api/transaction/addtransaction', { ...transaction, UserId: user._id });
                 message.success("Transaction added successfully");
                 //adding transcation to context api
-                addTransaction(transaction);
+                addTransaction({...transaction, amount: Number(formData.amount), id: uuidv4() });
                 getTransactions();
             }
             //setting the transactionModal state to false
