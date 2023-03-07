@@ -128,10 +128,10 @@ const Dashboard1 = () => {
 
   return (
     <div className='dashboard_container'>
-      {loading && <Spinner />}
-
+      
       {/* This section includes a filter component with frequency and type selectors. */}
       <div className='filter' >
+      {loading && <Spinner />}
         <div className='d-flex1'>
           {/* Frequency selector */}
           <div className='frequency'>
@@ -184,6 +184,7 @@ const Dashboard1 = () => {
       {/* If the add/edit transaction modal is visible, render the Modelpopup component. */}
       {showAddEditTransactionModal && (
         <><Modelpopup
+        
           showAddEditTransactionModal={showAddEditTransactionModal}
           setShowAddEditTransactionModal={setShowAddEditTransactionModal}
           selectedItemForEdit={selectedItemForEdit}

@@ -4,7 +4,7 @@ import { Space, Spin } from 'antd';
 function Spinner() {
   return (
       <Space className="spinner"  >
-        <Spin tip="Loading..." size="large" />
+        <Spin className="spin"  tip="Loading..." size="large" />
       </Space>
   );
 }

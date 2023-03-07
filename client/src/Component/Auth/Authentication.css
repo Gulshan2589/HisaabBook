@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   color: rebeccapurple;
-  padding: 16rem 38rem;
+  padding: 17rem 38rem;
   background: rgba(255, 255, 255, 0.66);
   border-radius: 4px;
 }
@@ -61,7 +61,18 @@ input:focus {
     background: var(--color-lightseagreen);
   }
 
-  .lottie {
-    display: none;
-  }
+ 
+.spinner {
+  position: absolute;
+  text-align: center;
+  color: rebeccapurple;
+  padding: 22rem 35rem;
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 4px;
+}
+
+.spin {
+  align-items: center;
+  justify-content: center;
+}
 }

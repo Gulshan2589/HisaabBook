@@ -137,7 +137,6 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
          open={showAddEditTransactionModal}
             onCancel={() => setShowAddEditTransactionModal(false)}
             footer={false}>
-            {loading && <Spinner />}
             {/* card with classname root */}
             <Card className={classes.root}>
                 <CardHeader className={classes.CardHeader} title="HisaabBook"
@@ -146,6 +145,7 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
                     <Typography align="center" variant="h5">Total Balance ₹{balance}</Typography>
                     <Typography style={{ lineheight: '2em', marginTop: '20px' }}>
                         {/* for additional information */}
+                        {loading && <Spinner />}
                         <InfoCard />
                     </Typography>
                     <Divider className={classes.divider} />
