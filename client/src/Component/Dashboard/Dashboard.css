@@ -143,8 +143,48 @@ h6 {
         margin-right: 8px;
         margin-left: 0px;
     }
-
-    
-
    
+}
+
+@media screen and (max-width: 500px) {
+    .dashboard_container {
+        overflow: scroll;
+        margin: 6px;
+    }
+
+    .d-flex1 {
+        padding: 5px;
+    }
+
+    .type {
+        margin-left: 8px;
+    }
+
+    .analysis {
+        margin-left: 4px;
+        margin-right: 0px;
+    }
+
+    .icons {
+        font-size: 1.8rem;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+
+    .primary {
+        font-size: 15px;
+        padding: 8px 8px;
+        background-color: var(--color-brightblue);
+        color: var(--color-white);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .f-button {
+        margin-top: 25px;
+        margin-bottom: 0px;
+        margin-right: 8px;
+        margin-left: 0px;
+    }
 }
