@@ -38,6 +38,7 @@ function Navbar() {
                             <div className='lgout-dflex'>
                                 <BiLogOut className='logout-small' onClick={() => {
                                     localStorage.removeItem('HisabbookUser');
+                                    setToggleMenu(false);
                                     navigate("/login");
                                 }}>Log Out</BiLogOut>
                                 {!user ? <h6 className='username-small'></h6> : <h6 className='username-small'>{user.name}</h6>}
