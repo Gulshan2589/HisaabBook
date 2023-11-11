@@ -1,21 +1,48 @@
 .register {
+  width: 100%;
   height: 100vh;
+  background-color: var(--color-lightseagreen);
+}
+
+.formlogin {
+  margin-right: 100px;
+}
+
+.formregister {
+  margin-left: 100px;
+}
+
+.formcontainer {
+  padding: 20px 30px;
   display: flex;
-  background: var(--color-lightseagreen);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-lightseagreen);
 }
 
-.form {
-  margin: 3rem 4rem;
-}
-
+/* Spinner.css */
 .spinner {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: rebeccapurple;
-  padding: 17rem 38rem;
-  background: rgba(255, 255, 255, 0.66);
-  border-radius: 4px;
+  background-color: rgba(24, 24, 24, 0.7); 
+  z-index: 9999; 
+}
+
+.spin {
+  color: #fff; 
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .register input {
@@ -31,8 +58,8 @@ input:focus {
   border-bottom: 1px solid rgba(255, 255, 255, 0.784) !important;
 }
 
-.label-auth label{
-  color: var(--color-golden)!important;
+.label-auth label {
+  color: var(--color-golden) !important;
 }
 
 #reglink {
@@ -47,32 +74,66 @@ input:focus {
 
 .primary {
   font-size: 1rem;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-bottom: 6px;
   padding: 9px 9px;
+  border: 1px solid white;
   background-color: var(--color-brightblue);
-  color: var(--color-white);
+  color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
-@media (max-width: 991px) {
+
+@media screen and (max-width: 650px) {
   .register {
-    background: var(--color-lightseagreen);
+    width: 100%;
+    height: 100vh;
   }
 
- 
-.spinner {
-  position: absolute;
-  text-align: center;
-  color: rebeccapurple;
-  padding: 22rem 35rem;
-  background: rgba(255, 255, 255, 0.66);
-  border-radius: 4px;
+  .lottieanime {
+    background-color: var(--color-lightseagreen);
+  }
+
+  .formlogin {
+    margin-right: 0px;
+  }
+
+  .formregister {
+    margin-left: 0px;
+  }
+
+  .formcontainer {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
 }
 
-.spin {
-  align-items: center;
-  justify-content: center;
-}
+@media (max-width: 991px) {
+  .register {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .lottieanime {
+    background-color: var(--color-lightseagreen);
+  }
+
+  .formlogin {
+    margin-right: 0px;
+  }
+
+  .formregister {
+    margin-left: 0px;
+  }
+
+  .formcontainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-lightseagreen);
+  }
+
 }

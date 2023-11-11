@@ -1,5 +1,5 @@
 .section__padding {
-    padding: 3rem 6rem;
+    padding: 1rem 6rem;
 }
 
 .app__header {
@@ -7,10 +7,9 @@
 }
 
 .app__wrapper {
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
 }
 
 .app__wrapper_info {
@@ -20,7 +19,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .app__header-h1 {
@@ -53,16 +52,12 @@
 
 .app__wrapper_img {
     flex: 1;
-    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
-.app__wrapper_img lottie-player {
-    width: 90%;
-}
 
 @media screen and (min-width: 2000px) {
     .app__header-h1 {
@@ -82,16 +77,30 @@
     .section__padding {
         padding: 10px 20px;
     }
+
+    .app__wrapper_info {
+        margin-bottom: 8px;
+    }
+
     .app__header-h1 {
         font-size: 40px;
         line-height: 50px;
     }
+
     .app__header-h2 {
         font-size: 20px;
     }
-    .herolink{
+
+    .herolink {
         font-size: 9px;
         padding: 12px 10px;
+    }
+
+    .app__wrapper_img {
+        flex: 1;
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 7px;
     }
 
 }

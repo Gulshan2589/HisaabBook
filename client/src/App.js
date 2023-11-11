@@ -3,6 +3,7 @@ import './App.css';
 import { Navbar, Hero, Analtics, Dashboard1, Contact, Register, Login } from './Component';
 import { Route, Routes, BrowserRouter, useNavigate } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="App">

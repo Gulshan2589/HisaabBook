@@ -1,4 +1,5 @@
 .dashboard_container {
+    position: relative;
     margin: 1rem 1rem;
     border: 1.5px solid lightseagreen;
     border-radius: 4px;

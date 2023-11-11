@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import * as faceapi from 'face-api.js';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -14,17 +14,21 @@ function Face() {
     const canvasRef = React.useRef();
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         const loadModels = async () => {
-            const MODEL_URL = process.env.PUBLIC_URL + '/models';
+            const MODEL_URL = 'https://github.com/justadudewhohacks/face-api.js-models';
+            try {
+                await faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL);
+                await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
+                await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL);
+                await faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL);
 
-            Promise.all([
-                faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
-                faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
-                faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL),
-                faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
-            ]).then(setModelsLoaded(true));
-        }
+                setModelsLoaded(true);
+            } catch (error) {
+                console.error('Error loading models:', error);
+            }
+        };
+
         loadModels();
     }, []);
 

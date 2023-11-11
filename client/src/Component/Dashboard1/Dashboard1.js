@@ -32,6 +32,7 @@ const Dashboard1 = () => {
       const user = JSON.parse(localStorage.getItem("HisabbookUser"));
       // Get the current user from local storage
 
+      // setTimeout(() => setLoading(true), 3000);
       setLoading(true);
       // Make an API request to fetch transaction data from the server, 
       //passing in the user ID, frequency, and other options as parameters
@@ -42,9 +43,11 @@ const Dashboard1 = () => {
         });
       // Set the fetched transaction data in the component's state
       setTransactionsData(respone.data);
-      setLoading(false);
+      
     } catch (error) {
       message.error('somethin went wrong');
+      
+    }finally {
       setLoading(false);
     }
   };
@@ -53,17 +56,20 @@ const Dashboard1 = () => {
   const deleteTransactions = async (record) => {
     try {
       //setting the loading state to true
-      setLoading(true);
+      setTimeout(() => setLoading(true), 3000);
+      // setLoading(true);
       //posting data of deleted transaction through axios in database
       await axios.post('/api/transaction/delete-transaction', { transactionId: record._id });
-      {transactions.map((transaction) => (deleteTransaction(transaction.id)))};
+      transactions.map((transaction) => (deleteTransaction(transaction.id)));
       message.success("Transaction Deleted Successfully");
       //getting all transactions after deleteed transactions
       getTransactions();
-      setLoading(false);
+      
     } catch (error) {
-      setLoading(false);
+      
       message.error('Something Went Wrong');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -128,10 +134,10 @@ const Dashboard1 = () => {
 
   return (
     <div className='dashboard_container'>
-      
+      {loading && <Spinner text="Loading..." />}
       {/* This section includes a filter component with frequency and type selectors. */}
       <div className='filter' >
-      {loading && <Spinner />}
+      
         <div className='d-flex1'>
           {/* Frequency selector */}
           <div className='frequency'>

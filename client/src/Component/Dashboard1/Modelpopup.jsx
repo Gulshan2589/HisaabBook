@@ -48,6 +48,7 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
         //assigning value of localstorage data to user varaible
         try {
             const user = JSON.parse(localStorage.getItem("HisabbookUser"));
+            //setTimeout(() => setLoading(true), 3000);
             setLoading(true);
             //if form is in edit state then if codtion otherwise else
             if (selectedItemForEdit) {
@@ -72,11 +73,13 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
             setShowAddEditTransactionModal(false);
             setSelectedItemForEdit(null);
             //setting the loading state to false
-            setLoading(false);
+            
             //catching error if any exception
         } catch (error) {
-            setLoading(false);
+            
             message.error('something went wrong');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -138,6 +141,7 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
             onCancel={() => setShowAddEditTransactionModal(false)}
             footer={false}>
             {/* card with classname root */}
+            {loading && <Spinner text="Saving..." />}
             <Card className={classes.root}>
                 <CardHeader className={classes.CardHeader} title="HisaabBook"
                     subheader={<Typography className={classes.subheader}>Powerd by Speechly</Typography>} />
@@ -145,7 +149,7 @@ const Modelpopup = ({ setShowAddEditTransactionModal, showAddEditTransactionModa
                     <Typography align="center" variant="h5">Total Balance ₹{balance}</Typography>
                     <Typography style={{ lineheight: '2em', marginTop: '20px' }}>
                         {/* for additional information */}
-                        {loading && <Spinner />}
+                       
                         <InfoCard />
                     </Typography>
                     <Divider className={classes.divider} />

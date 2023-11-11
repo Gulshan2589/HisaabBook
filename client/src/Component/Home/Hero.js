@@ -4,6 +4,10 @@ import { NavLink } from 'react-router-dom';
 import '../Home/Hero.css';//importing stylesheet of Hero section
 
 function Hero() {
+  const myStyle = {
+    width: '650px',
+    height: '450px',
+  };
   return (
     <div className="app__header app__wrapper section__padding" id="home">
       <div className="app__wrapper_info">
@@ -12,8 +16,9 @@ function Hero() {
         <NavLink to="/dashboard" className='herolink'>Get Started</NavLink>
       </div>
       <div className="app__wrapper_img">
-        <lottie-player src="https://lottie.host/3c72af23-f40b-494f-8a7e-f63cddcda486/rxdCECf4w6.json"
-          background="transparent" speed="1" loop autoplay></lottie-player>
+        <dotlottie-player src="https://lottie.host/1579d1e1-f107-47b4-b20c-02a626f14882/fFarku58wz.json"
+          background="transparent" speed="1" loop autoplay
+          style={myStyle}></dotlottie-player>
       </div>
     </div>
   )

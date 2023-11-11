@@ -1,10 +1,11 @@
 import React from "react";
 import { Space, Spin } from 'antd';
+import './Authentication.css';
 
-function Spinner() {
+function Spinner({ text = 'Loading...' }) {
   return (
       <Space className="spinner"  >
-        <Spin className="spin"  tip="Loading..." size="large" />
+        <Spin className="spin" tip={text} size="large" />
       </Space>
   );
 }
