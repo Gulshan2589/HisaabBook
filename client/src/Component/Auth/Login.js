@@ -31,7 +31,10 @@ const Login = () => {
       {loading && <Spinner />}
       <div className="formcontainer">
         <div className="formlogin">
-          <Form className="forminput" layout="vertical" onFinish={onFinish}>
+          <Form className="forminput" layout="vertical" onFinish={onFinish}initialValues={{
+    email: 'gulsanvarma2589@gmail.com',
+    password: '1234',
+  }}>
             <h1>HisaabBook Login</h1>
             <hr />
             <Form.Item className='label-auth' label="Email" name="email">
